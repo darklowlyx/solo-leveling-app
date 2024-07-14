@@ -1,0 +1,37 @@
+@import "reset";
+@import "mixin";
+
+$breakpoint-1: 61.9988em;
+$breakpoint-2: 47.9988em;
+$breakpoint-3: 35.9988em;
+
+$white: #f0f0f0;
+$black: #101010;
+/* -----COMMON----- */
+body {
+	color: $white;
+	background-color: $black;
+	-webkit-touch-callout: none;
+  -webkit-user-select: none; 
+  -khtml-user-select: none; 
+  -moz-user-select: none; 
+  -ms-user-select: none; 
+  user-select: none;
+}
+
+.wrapper {
+	display: flex;
+	flex-direction: column;
+	overflow: clip;
+	min-height: 100%;
+}
+
+[class*="__container"] {
+	margin: 0 auto;
+	max-width: 81.875rem;
+	padding: 0 0.9375rem;
+}
+
+.page {
+	flex: 1 1 auto;
+}
