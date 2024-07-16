@@ -1,6 +1,12 @@
 @import "reset";
 @import "mixin";
 
+@font-face {
+	font-family: "sololeveling";
+	font-weight: 400;
+	src: url(../assets/fonts/sololeveling.otf);
+}
+
 $breakpoint-1: 61.9988em;
 $breakpoint-2: 47.9988em;
 $breakpoint-3: 35.9988em;
@@ -17,6 +23,7 @@ body {
   -moz-user-select: none; 
   -ms-user-select: none; 
   user-select: none;
+	
 }
 .wrapper {
 	display: flex;
@@ -37,6 +44,7 @@ body {
 /* -----COMMON----- */
 .page {
 	&__initial {
+		overflow: clip;
 		position: absolute;
 		top: 0;
 		left: 0;
@@ -57,11 +65,11 @@ body {
 		min-height: 100dvh;
 		width: 100%;
 		text-align: center;
-		color: #000;
 		z-index: 1;
+		font-family: "sololeveling";
+		@include adaptiv-value("font-size", 128, 48, 1);
 		img{
 			width: 100%;
-
 		}
 	}
 }
@@ -84,10 +92,40 @@ body {
 			pointer-events: none;
 		}
 	}
+
+	&__button.fullscreen {
+		position: absolute;
+    width: 100vw;
+    height: 100vh;
+    transition: all 0.5s ease;
+    background: rgba(0, 0, 0, 0);
+    z-index: 20;
+    img {
+      transform: scale(12);
+			opacity: 1;
+    }
+  }
 }
 
 .active{
 	display: flex;
 	align-items: center;
 	justify-content: center;
+}
+
+.flash {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: white;
+  opacity: 0;
+  z-index: 50;
+  transition: opacity 0.5s ease;
+  pointer-events: none;
+}
+
+.flash.show {
+  opacity: 1;
 }

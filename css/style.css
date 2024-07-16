@@ -52,6 +52,11 @@ button {
   background-color: inherit;
 }
 
+@font-face {
+  font-family: "sololeveling";
+  font-weight: 400;
+  src: url(../assets/fonts/sololeveling.otf);
+}
 /* -----COMMON----- */
 body {
   color: #f0f0f0;
@@ -81,6 +86,7 @@ body {
 
 /* -----COMMON----- */
 .page__initial {
+  overflow: clip;
   position: absolute;
   top: 0;
   left: 0;
@@ -101,8 +107,14 @@ body {
   min-height: 100dvh;
   width: 100%;
   text-align: center;
-  color: #000;
   z-index: 1;
+  font-family: "sololeveling";
+  font-size: 128px;
+}
+@media (max-width: 1280px) {
+  .page__main {
+    font-size: calc(48px + 80 * (100vw - 320px) / 960);
+  }
 }
 .page__main img {
   width: 100%;
@@ -125,9 +137,38 @@ body {
   transition: all 0.3s ease;
   pointer-events: none;
 }
+.initial__button.fullscreen {
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  transition: all 0.5s ease;
+  background: rgba(0, 0, 0, 0);
+  z-index: 20;
+}
+.initial__button.fullscreen img {
+  transform: scale(12);
+  opacity: 1;
+}
 
 .active {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.flash {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: white;
+  opacity: 0;
+  z-index: 50;
+  transition: opacity 0.5s ease;
+  pointer-events: none;
+}
+
+.flash.show {
+  opacity: 1;
 }
