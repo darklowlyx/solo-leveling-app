@@ -96,23 +96,6 @@ body {
   background-repeat: no-repeat;
   background-position: center;
 }
-.page__start-button {
-  cursor: pointer;
-  width: 80px;
-  background-color: rgba(0, 0, 0, 0);
-  transition: all 0.3s ease;
-  transform: translateY(80px);
-}
-.page__start-button:hover img {
-  transform: scale(1.1);
-  opacity: 1;
-}
-.page__start-button img {
-  width: 100%;
-  opacity: 0.6;
-  transition: all 0.3s ease;
-  pointer-events: none;
-}
 .page__main {
   display: none;
   min-height: 100dvh;
@@ -123,6 +106,24 @@ body {
 }
 .page__main img {
   width: 100%;
+}
+
+.initial__button {
+  cursor: pointer;
+  width: 80px;
+  background-color: rgba(0, 0, 0, 0);
+  transition: all 0.3s ease;
+  transform: translateY(80px);
+}
+.initial__button:hover img {
+  transform: scale(1.1);
+  opacity: 1;
+}
+.initial__button img {
+  width: 100%;
+  opacity: 0.6;
+  transition: all 0.3s ease;
+  pointer-events: none;
 }
 
 .active {

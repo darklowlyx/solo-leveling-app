@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
-    const initialScreen = document.querySelector(".page__initial");
-    const startButton = document.querySelector(".page__start-button");
+    const initialScreen = document.querySelector(".initial");
+    const startButton = document.querySelector(".initial__button");
     const mainContent = document.querySelector(".page__main");
     const backgroundMusic = document.getElementById("background-music");
 
