@@ -2,7 +2,6 @@ document.addEventListener("DOMContentLoaded", () => {
 	const initialScreen = document.querySelector(".initial");
 	const startButton = document.querySelector(".initial__button");
 	const mainContent = document.querySelector(".page__main");
-	const backgroundMusic = document.getElementById("background-music");
 	const transitionSound = document.getElementById("transition-sound")
 
 	startButton.addEventListener("click", () => {
@@ -22,8 +21,6 @@ document.addEventListener("DOMContentLoaded", () => {
 							setTimeout(() => {
 									document.body.removeChild(flash);
 							}, 500);
-
-							backgroundMusic.play();
 					}, 500);
 			}, 500); 
 	});
