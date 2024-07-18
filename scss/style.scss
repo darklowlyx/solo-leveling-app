@@ -52,8 +52,10 @@ body {
 		height: 100%;
 		background-color: $black;
 		display: flex;
+		flex-direction: column;
 		justify-content: center;
 		align-items: center;
+		gap: 5px;
 		z-index: 10;
 		background-image: url(../assets/img/background1.jpg);
 		background-size: cover;
@@ -74,23 +76,27 @@ body {
 	}
 }
 
+.button-i{
+	cursor: pointer;
+	width: 60px;
+	background-color: rgba(0, 0, 0, 0);
+	transition: all 0.3s ease;
+	transform: translateY(80px);
+	&:hover img{
+		transform: scale(1.1);
+		opacity: 1;
+	}
+	img{
+		width: 100%;
+		opacity: 0.6;
+		transition: all 0.3s ease;
+		pointer-events: none;
+	}
+}
+
 .initial{
 	&__button{
-		cursor: pointer;
 		width: 80px;
-		background-color: rgba(0, 0, 0, 0);
-		transition: all 0.3s ease;
-		transform: translateY(80px);
-		&:hover img{
-			transform: scale(1.1);
-			opacity: 1;
-		}
-		img{
-			width: 100%;
-			opacity: 0.6;
-			transition: all 0.3s ease;
-			pointer-events: none;
-		}
 	}
 
 	&__button.fullscreen {
@@ -105,8 +111,29 @@ body {
 			opacity: 1;
     }
   }
+	&__mute{
+		position: relative;
+		overflow: hidden;
+	}
+	span{
+		transition: all 0.2s ease;
+		transform: rotate(-45deg);
+	}
 }
-
+.mute-t{
+	content: "";
+	transform: rotate(-45deg);
+	position: absolute;
+	top: 0;
+	top: calc(50% - 3px);
+	left: 0;
+	height: 10px;
+	width: 100%;
+	opacity: 0.8;
+	border-radius: 5px;
+	
+	background-color: #750102;
+}
 .active{
 	display: flex;
 	align-items: center;
@@ -129,3 +156,4 @@ body {
 .flash.show {
   opacity: 1;
 }
+

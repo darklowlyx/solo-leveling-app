@@ -94,8 +94,10 @@ body {
   height: 100%;
   background-color: #000;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
+  gap: 5px;
   z-index: 10;
   background-image: url(../assets/img/background1.jpg);
   background-size: cover;
@@ -120,22 +122,26 @@ body {
   width: 100%;
 }
 
-.initial__button {
+.button-i {
   cursor: pointer;
-  width: 80px;
+  width: 60px;
   background-color: rgba(0, 0, 0, 0);
   transition: all 0.3s ease;
   transform: translateY(80px);
 }
-.initial__button:hover img {
+.button-i:hover img {
   transform: scale(1.1);
   opacity: 1;
 }
-.initial__button img {
+.button-i img {
   width: 100%;
   opacity: 0.6;
   transition: all 0.3s ease;
   pointer-events: none;
+}
+
+.initial__button {
+  width: 80px;
 }
 .initial__button.fullscreen {
   position: absolute;
@@ -148,6 +154,28 @@ body {
 .initial__button.fullscreen img {
   transform: scale(12);
   opacity: 1;
+}
+.initial__mute {
+  position: relative;
+  overflow: hidden;
+}
+.initial span {
+  transition: all 0.2s ease;
+  transform: rotate(-45deg);
+}
+
+.mute-t {
+  content: "";
+  transform: rotate(-45deg);
+  position: absolute;
+  top: 0;
+  top: calc(50% - 3px);
+  left: 0;
+  height: 10px;
+  width: 100%;
+  opacity: 0.8;
+  border-radius: 5px;
+  background-color: #750102;
 }
 
 .active {
