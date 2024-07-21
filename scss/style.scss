@@ -2,9 +2,8 @@
 @import "mixin";
 
 @font-face {
-	font-family: "sololeveling";
-	font-weight: 400;
-	src: url(../assets/fonts/sololeveling.otf);
+	font-family: "MrAlex";
+	src: url(../assets/fonts/MrAlex-Bold.woff2);
 }
 
 $breakpoint-1: 61.9988em;
@@ -86,8 +85,7 @@ body {
 		text-align: center;
 		z-index: 1;
 		color: $black;
-		font-family: "sololeveling";
-		@include adaptiv-value("font-size", 128, 48, 1);
+		font-family: "MrAlex";
 		img{
 			width: 100%;
 		}
@@ -100,6 +98,11 @@ body {
 	background-color: rgba(0, 0, 0, 0);
 	transition: all 0.3s ease;
 	transform: translateY(80px);
+	outline: none;
+	&:focus img{
+		transform: scale(1.1);
+		opacity: 1;
+	}
 	&:hover img{
 		transform: scale(1.1);
 		opacity: 1;
@@ -174,3 +177,69 @@ body {
   opacity: 1;
 }
 
+
+.main {
+	color: $white;
+	&__windows {
+		display: flex;
+		justify-content: center;
+		gap: 20px;
+		min-width: 100%;
+		height: 80dvh;
+		@media (max-width: $breakpoint-1){
+			flex-direction: column;
+		}
+	}
+	&__window {
+		@media (max-width: $breakpoint-1){
+			min-height: 50dvh;
+		}
+	}
+}
+.small-window {
+	height: 65%;
+}
+.window {
+	position: relative;
+	background-color: rgba(3, 25, 77, 0.8);
+	border: 1px solid $black;
+	overflow: hidden;
+	flex: 0 1 33%;
+	border-radius: 10px;
+	box-shadow: inset 0px 0px 30px #44A7C1;
+	padding: 50px 0px;
+	img{
+		opacity: 0.9;
+	}
+	.corner-border{
+		position: absolute;
+		aspect-ratio: 100.869565%;
+		max-width: 77.333px;
+		max-height: 76.667px;
+	}
+	.corner-border:first-child{
+		top: 0;
+		left: 0;
+	}
+	.corner-border:nth-child(2){
+		top: 0;
+		right: 0;
+		transform: rotate(90deg);
+	}
+	.corner-border:nth-child(3){
+		bottom: 0;
+		left: 0;
+		transform: rotate(-90deg);
+	}
+	.corner-border:last-child{
+		bottom: 0;
+		right: 0;
+		transform: rotate(180deg);
+	}
+}
+.big-window {
+	height: 100%;
+	@media (max-width: $breakpoint-1){
+		min-height: 80dvh;
+	}
+}
