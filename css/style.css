@@ -81,7 +81,7 @@ body {
 
 .page {
   flex: 1 1 auto;
-  background-color: #dfdfdf;
+  background-color: #000;
 }
 
 /* -----COMMON----- */
@@ -98,24 +98,24 @@ body {
   align-items: center;
   gap: 5px;
   z-index: 10;
-  background: -0.5%/25% no-repeat url("../assets/img/intro/bg-01.png"), 33%/25% no-repeat url("../assets/img/intro/bg-02.png"), 66.5%/25% no-repeat url("../assets/img/intro/bg-03.png"), 100%/25% no-repeat url("../assets/img/intro/bg-04.png");
+  background: -0.5%/25% no-repeat url("../assets/img/intro/bg-01.jpg"), 33%/25% no-repeat url("../assets/img/intro/bg-02.jpg"), 66.5%/25% no-repeat url("../assets/img/intro/bg-03.jpg"), 100%/25% no-repeat url("../assets/img/intro/bg-04.jpg");
   background-color: #dfdfdf;
 }
 @media (max-width: 61.9988em) {
   .page__initial {
-    background: -0.5%/33% no-repeat url("../assets/img/intro/bg-01.png"), 50%/33% no-repeat url("../assets/img/intro/bg-02.png"), 100%/33% no-repeat url("../assets/img/intro/bg-04.png");
+    background: -0.5%/33% no-repeat url("../assets/img/intro/bg-01.jpg"), 50%/33% no-repeat url("../assets/img/intro/bg-02.jpg"), 100%/33% no-repeat url("../assets/img/intro/bg-04.jpg");
     background-color: #dfdfdf;
   }
 }
 @media (max-width: 47.9988em) {
   .page__initial {
-    background: 0%/50% no-repeat url("../assets/img/intro/bg-01.png"), 100%/50% no-repeat url("../assets/img/intro/bg-04.png");
+    background: 0%/50% no-repeat url("../assets/img/intro/bg-01.jpg"), 100%/50% no-repeat url("../assets/img/intro/bg-04.jpg");
     background-color: #dfdfdf;
   }
 }
 @media (max-width: 35.9988em) {
   .page__initial {
-    background: 0%/100% no-repeat url("../assets/img/intro/bg-01.png");
+    background: 0%/100% no-repeat url("../assets/img/intro/bg-01.jpg");
     background-color: #dfdfdf;
   }
 }
@@ -205,7 +205,7 @@ body {
   left: 0;
   width: 100%;
   height: 100%;
-  background: #dfdfdf;
+  background: #000;
   opacity: 0;
   z-index: 50;
   transition: opacity 0.5s ease;
@@ -248,17 +248,84 @@ body {
   overflow: hidden;
   flex: 0 1 33%;
   border-radius: 10px;
-  box-shadow: inset 0px 0px 30px #44A7C1;
+  box-shadow: inset 0px 0px 20px #44A7C1;
   padding: 50px 0px;
+}
+@media (max-width: 61.9988em) {
+  .window:first-child {
+    display: none;
+  }
+}
+@media (max-width: 61.9988em) {
+  .window:last-child {
+    display: none;
+  }
 }
 .window img {
   opacity: 0.9;
+}
+.window__top-status {
+  position: relative;
+  max-width: 90%;
+  margin: 0 auto;
+}
+.window__top-status::before, .window__top-status::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  width: 25%;
+  height: 100%;
+}
+.window__top-status::before {
+  left: 0;
+  background: rgb(3, 25, 77);
+  background: linear-gradient(90deg, rgb(3, 25, 77) 0%, rgba(3, 25, 77, 0.9) 33%, rgba(3, 25, 77, 0.8) 66%, rgba(0, 0, 0, 0) 99%);
+}
+.window__top-status::after {
+  right: 0;
+  background: rgb(3, 25, 77);
+  background: linear-gradient(270deg, rgb(3, 25, 77) 0%, rgba(3, 25, 77, 0.9) 33%, rgba(3, 25, 77, 0.8) 66%, rgba(0, 0, 0, 0) 99%);
+}
+.window__top h2 {
+  padding: 20px 0;
+  border: 2px solid #53AACC;
+  border-left: none;
+  border-right: none;
+  box-shadow: inset 0px 0px 25px #53AACC;
+  max-width: 100%;
+  margin: 0 auto;
+  text-align: center;
+}
+.window__top img {
+  aspect-ratio: 241.935484%;
+  max-width: 100px;
+  max-height: 41.333px;
+}
+@media (max-width: 1280px) {
+  .window__top img {
+    max-width: calc(66.6667px + 33.3333 * (100vw - 320px) / 960);
+  }
+}
+@media (max-width: 1280px) {
+  .window__top img {
+    max-height: calc(27.5556px + 13.7774 * (100vw - 320px) / 960);
+  }
 }
 .window .corner-border {
   position: absolute;
   aspect-ratio: 100.869565%;
   max-width: 77.333px;
   max-height: 76.667px;
+}
+@media (max-width: 1280px) {
+  .window .corner-border {
+    max-width: calc(51.5553px + 25.7777 * (100vw - 320px) / 960);
+  }
+}
+@media (max-width: 1280px) {
+  .window .corner-border {
+    max-height: calc(51.1113px + 25.5557 * (100vw - 320px) / 960);
+  }
 }
 .window .corner-border:first-child {
   top: 0;
@@ -285,6 +352,6 @@ body {
 }
 @media (max-width: 61.9988em) {
   .big-window {
-    min-height: 80dvh;
+    min-height: 90dvh;
   }
 }

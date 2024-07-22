@@ -40,7 +40,7 @@ body {
 
 .page {
 	flex: 1 1 auto;
-	background-color: $white;
+	background-color: $black;
 }
 /* -----COMMON----- */
 .page {
@@ -57,24 +57,24 @@ body {
 		align-items: center;
 		gap: 5px;
 		z-index: 10;
-		background: -0.5% / 25% no-repeat url("../assets/img/intro/bg-01.png"),
-		33% / 25% no-repeat url("../assets/img/intro/bg-02.png"),
-		66.5% / 25% no-repeat url("../assets/img/intro/bg-03.png"),
-		100% / 25% no-repeat url("../assets/img/intro/bg-04.png");
+		background: -0.5% / 25% no-repeat url("../assets/img/intro/bg-01.jpg"),
+		33% / 25% no-repeat url("../assets/img/intro/bg-02.jpg"),
+		66.5% / 25% no-repeat url("../assets/img/intro/bg-03.jpg"),
+		100% / 25% no-repeat url("../assets/img/intro/bg-04.jpg");
 		background-color: $white;
 		@media (max-width: $breakpoint-1){
-			background: -0.5% / 33% no-repeat url("../assets/img/intro/bg-01.png"),
-			50% / 33% no-repeat url("../assets/img/intro/bg-02.png"),
-			100% / 33% no-repeat url("../assets/img/intro/bg-04.png");
+			background: -0.5% / 33% no-repeat url("../assets/img/intro/bg-01.jpg"),
+			50% / 33% no-repeat url("../assets/img/intro/bg-02.jpg"),
+			100% / 33% no-repeat url("../assets/img/intro/bg-04.jpg");
 			background-color: $white;
 		}
 		@media (max-width: $breakpoint-2){
-			background: 0% / 50% no-repeat url("../assets/img/intro/bg-01.png"),
-			100% / 50% no-repeat url("../assets/img/intro/bg-04.png");
+			background: 0% / 50% no-repeat url("../assets/img/intro/bg-01.jpg"),
+			100% / 50% no-repeat url("../assets/img/intro/bg-04.jpg");
 			background-color: $white;
 		}
 		@media (max-width: $breakpoint-3){
-			background: 0% / 100% no-repeat url("../assets/img/intro/bg-01.png");
+			background: 0% / 100% no-repeat url("../assets/img/intro/bg-01.jpg");
 			background-color: $white;
 		}
 	}
@@ -166,7 +166,7 @@ body {
   left: 0;
   width: 100%;
   height: 100%;
-  background: $white;
+  background: $black;
   opacity: 0;
   z-index: 50;
   transition: opacity 0.5s ease;
@@ -180,6 +180,7 @@ body {
 
 .main {
 	color: $white;
+	
 	&__windows {
 		display: flex;
 		justify-content: center;
@@ -206,16 +207,67 @@ body {
 	overflow: hidden;
 	flex: 0 1 33%;
 	border-radius: 10px;
-	box-shadow: inset 0px 0px 30px #44A7C1;
+	box-shadow: inset 0px 0px 20px #44A7C1;
 	padding: 50px 0px;
+	&:first-child{
+		@media (max-width: $breakpoint-1){
+			display: none;
+		}
+	}
+	&:last-child{
+		@media (max-width: $breakpoint-1){
+			display: none;
+		}
+	}
 	img{
 		opacity: 0.9;
 	}
+	&__top{
+		&-status{
+			position: relative;
+			max-width: 90%;
+			margin: 0 auto;
+			&::before, &::after{
+				content: '';
+				position: absolute;
+				top: 0;
+				width: 25%;
+				height: 100%;
+			}
+			&::before{
+				left: 0;
+				background: rgb(3,25,77);
+				background: linear-gradient(90deg, rgba(3,25,77,1) 0%, rgba(3,25,77,0.9) 33%, rgba(3,25,77,0.8) 66%, rgba(0,0,0,0) 99%); 
+			}
+			&::after{
+				right: 0;
+				background: rgb(3,25,77);
+				background: linear-gradient(270deg, rgba(3,25,77,1) 0%, rgba(3,25,77,0.9) 33%, rgba(3,25,77,0.8) 66%, rgba(0,0,0,0) 99%); 
+			}
+		}
+		h2{
+			padding: 20px 0;
+			border: 2px solid #53AACC;
+			border-left: none;
+			border-right: none;
+			box-shadow: inset 0px 0px 25px #53AACC;
+			max-width: 100%;
+			margin: 0 auto;
+			text-align: center;
+			
+		}
+		img{
+			aspect-ratio: 241.935484%;
+			@include adaptiv-value("max-width", 100, 66.6667, 1);
+			@include adaptiv-value("max-height", 41.333, 27.5556, 1); 
+		}
+	}
+
 	.corner-border{
 		position: absolute;
 		aspect-ratio: 100.869565%;
-		max-width: 77.333px;
-		max-height: 76.667px;
+		@include adaptiv-value("max-width", 77.333, 51.5553, 1);
+		@include adaptiv-value("max-height", 76.667, 51.1113, 1);
 	}
 	.corner-border:first-child{
 		top: 0;
@@ -240,6 +292,6 @@ body {
 .big-window {
 	height: 100%;
 	@media (max-width: $breakpoint-1){
-		min-height: 80dvh;
+		min-height: 90dvh;
 	}
 }

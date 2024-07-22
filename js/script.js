@@ -7,8 +7,6 @@ document.addEventListener("DOMContentLoaded", () => {
 	const transitionSound = document.getElementById("transition-sound");
 	const introSong = document.getElementById("intro-song");
 	const backgroundSong = document.getElementById("background-song");
-	const black = "#000";
-	const white = "#fff"
 
 	startButton.addEventListener("click", () => {
 			startButton.classList.add("fullscreen");
@@ -24,7 +22,6 @@ document.addEventListener("DOMContentLoaded", () => {
 							mainContent.classList.add("active");
 							flash.classList.remove("show");
 							backgroundSong.play();
-							document.querySelector(".page").style.backgroundColor = black;
 							setTimeout(() => {
 									document.body.removeChild(flash);
 							}, 500);
