@@ -112,6 +112,9 @@ body {
 		opacity: 0.8;
 		transition: all 0.3s ease;
 		pointer-events: none;
+		@media (max-width: $breakpoint-2){
+			opacity: 1;
+		}
 	}
 }
 
@@ -180,20 +183,48 @@ body {
 
 .main {
 	color: $white;
-	
+	padding: 20px 0;
 	&__windows {
-		display: flex;
+		display: grid;
+		grid-auto-columns: 1fr;
+		grid-template-areas: 
+		"one two three";
 		justify-content: center;
 		gap: 20px;
 		min-width: 100%;
-		height: 80dvh;
 		@media (max-width: $breakpoint-1){
-			flex-direction: column;
+			display: none;
+			grid-template-areas: 
+			"two"
+			"one three";
+		}
+		@media (max-width: $breakpoint-2){
+			display: none;
+			grid-template-areas: 
+			"one three"
+			"two";
+		}
+		@media (max-width: $breakpoint-3){
+			display: grid;
+			grid-template-areas: 
+			"one"
+			"two"
+			"three";
 		}
 	}
 	&__window {
+		min-height: 50dvh;
 		@media (max-width: $breakpoint-1){
-			min-height: 50dvh;
+			min-height: 60dvh;
+		}
+		&:first-child{
+			grid-area: one;
+		}
+		&:nth-child(2){
+			grid-area: two;
+		}
+		&:last-child{
+			grid-area: three;
 		}
 	}
 }
@@ -209,14 +240,17 @@ body {
 	border-radius: 10px;
 	box-shadow: inset 0px 0px 20px #44A7C1;
 	padding: 50px 0px;
+	@media (max-width: $breakpoint-1){
+		box-shadow: inset 0px 0px 10px #44A7C1;
+	}
 	&:first-child{
 		@media (max-width: $breakpoint-1){
-			display: none;
+			
 		}
 	}
 	&:last-child{
 		@media (max-width: $breakpoint-1){
-			display: none;
+		
 		}
 	}
 	img{
@@ -260,6 +294,7 @@ body {
 			aspect-ratio: 241.935484%;
 			@include adaptiv-value("max-width", 100, 66.6667, 1);
 			@include adaptiv-value("max-height", 41.333, 27.5556, 1); 
+			opacity: 0.7;
 		}
 	}
 
@@ -268,6 +303,7 @@ body {
 		aspect-ratio: 100.869565%;
 		@include adaptiv-value("max-width", 77.333, 51.5553, 1);
 		@include adaptiv-value("max-height", 76.667, 51.1113, 1);
+		opacity: 0.8;
 	}
 	.corner-border:first-child{
 		top: 0;
@@ -290,7 +326,7 @@ body {
 	}
 }
 .big-window {
-	height: 100%;
+	min-height: 80dvh;
 	@media (max-width: $breakpoint-1){
 		min-height: 90dvh;
 	}
