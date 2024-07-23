@@ -1,7 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
 	const initialScreen = document.querySelector(".initial");
 	const startButton = document.querySelector(".initial__button");
-	const muteButton = document.querySelector(".initital__mute");
 	const mainContent = document.querySelector(".page__main");
 	const transitionSound = document.getElementById("transition-sound");
 

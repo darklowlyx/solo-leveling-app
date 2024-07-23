@@ -213,10 +213,7 @@ body {
 		}
 	}
 	&__window {
-		min-height: 50dvh;
-		@media (max-width: $breakpoint-1){
-			min-height: 60dvh;
-		}
+		min-height: 60dvh;
 		&:first-child{
 			grid-area: one;
 		}
@@ -288,7 +285,7 @@ body {
 			max-width: 100%;
 			margin: 0 auto;
 			text-align: center;
-			
+			font-size: 28px;
 		}
 		img{
 			aspect-ratio: 241.935484%;

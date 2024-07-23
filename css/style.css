@@ -252,12 +252,7 @@ body {
   }
 }
 .main__window {
-  min-height: 50dvh;
-}
-@media (max-width: 61.9988em) {
-  .main__window {
-    min-height: 60dvh;
-  }
+  min-height: 60dvh;
 }
 .main__window:first-child {
   grid-area: one;
@@ -322,6 +317,7 @@ body {
   max-width: 100%;
   margin: 0 auto;
   text-align: center;
+  font-size: 28px;
 }
 .window__top img {
   aspect-ratio: 241.935484%;
